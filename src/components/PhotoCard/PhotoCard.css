@@ -1,0 +1,13 @@
+.card {
+	border: none !important;
+	width: 18rem;
+}
+
+.card-img-top {
+	height: 280px;
+	object-fit: cover;
+}
+
+.btn {
+	border-radius: 10%;
+}
