@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./PhotoCard.css";
 
 class PhotoCard extends React.Component {
@@ -30,5 +31,10 @@ class PhotoCard extends React.Component {
 		);
 	}
 }
+
+PhotoCard.propTypes = {
+	photoData: PropTypes.array.isRequired,
+	removePhoto: PropTypes.func.isRequired,
+};
 
 export default PhotoCard;
