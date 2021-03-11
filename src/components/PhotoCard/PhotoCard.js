@@ -15,7 +15,11 @@ class PhotoCard extends React.Component {
 							/>
 							<div className="card-body">
 								<h5 className="card-title">{post.description}</h5>
-								<button type="button" class="btn btn-outline-danger">
+								<button
+									onClick={() => this.props.removePhoto(post)}
+									type="button"
+									className="btn btn-outline-danger"
+								>
 									Delete
 								</button>
 							</div>

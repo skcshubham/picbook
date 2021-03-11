@@ -27,12 +27,24 @@ class Photo extends React.Component {
 				},
 			],
 		};
+		this.removePhoto = this.removePhoto.bind(this);
 	}
+
+	removePhoto(photoRemoved) {
+		console.log(photoRemoved.description);
+		this.setState((state) => ({
+			posts: state.posts.filter((post) => post !== photoRemoved),
+		}));
+	}
+
 	render() {
 		return (
 			<div className="container Photo">
 				<div className="row row-cols-md-3 row-cols-1">
-					<PhotoCard photoData={this.state.posts} />
+					<PhotoCard
+						photoData={this.state.posts}
+						removePhoto={this.removePhoto}
+					/>
 				</div>
 			</div>
 		);
