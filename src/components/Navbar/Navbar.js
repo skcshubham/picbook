@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import "./Navbar.css";
 
@@ -12,6 +13,20 @@ class Navbar extends React.Component {
 					</a>
 					<div className="d-flex">
 						<p className="mt-2">built by Shubham Kumar</p>
+						<a
+							className="mt-2 pl-2"
+							href="https://www.linkedin.com/in/skcshubham"
+							target="_blank"
+						>
+							<i className="fab fa-linkedin fa-lg"></i>
+						</a>
+						<a
+							className="mt-2 pl-2"
+							href="https://github.com/skcshubham"
+							target="_blank"
+						>
+							<i class="fab fa-github fa-lg"></i>
+						</a>
 					</div>
 				</div>
 			</nav>

@@ -9,7 +9,7 @@ class Photo extends React.Component {
 			posts: [
 				{
 					id: "0",
-					description: "Random Landscapes",
+					description: "Landscape",
 					imageLink:
 						"https://images.pexels.com/photos/1447092/pexels-photo-1447092.png?auto=compress&cs=tinysrgb&dpr=1&w=500",
 				},
