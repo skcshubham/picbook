@@ -26,7 +26,7 @@ class Navbar extends React.Component {
 							target="_blank"
 							rel="noreferrer"
 						>
-							<i class="fab fa-github fa-lg"></i>
+							<i className="fab fa-github fa-lg"></i>
 						</a>
 					</div>
 				</div>

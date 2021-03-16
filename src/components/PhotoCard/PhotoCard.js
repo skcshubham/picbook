@@ -6,27 +6,32 @@ class PhotoCard extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				{this.props.photoData.map((post) => {
-					return (
-						<div key={post.id} className="card col mb-5">
-							<img
-								src={post.imageLink}
-								className="card-img-top"
-								alt={post.desciption}
-							/>
-							<div className="card-body">
-								<h5 className="card-title">{post.description}</h5>
-								<button
-									onClick={() => this.props.removePhoto(post)}
-									type="button"
-									className="btn btn-outline-danger"
-								>
-									Delete
-								</button>
+				{this.props.photoData
+					.sort(function (x, y) {
+						// Sorting based on recently added pic
+						return y.id - x.id;
+					})
+					.map((post) => {
+						return (
+							<div key={post.id} className="card col mb-5">
+								<img
+									src={post.imageLink}
+									className="card-img-top"
+									alt={post.desciption}
+								/>
+								<div className="card-body">
+									<h5 className="card-title">{post.description}</h5>
+									<button
+										onClick={() => this.props.removePhoto(post)}
+										type="button"
+										className="btn btn-outline-danger"
+									>
+										Delete
+									</button>
+								</div>
 							</div>
-						</div>
-					);
-				})}
+						);
+					})}
 			</React.Fragment>
 		);
 	}
