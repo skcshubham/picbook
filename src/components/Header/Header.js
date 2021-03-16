@@ -4,7 +4,7 @@ import "./Header.css";
 class Header extends React.Component {
 	render() {
 		return (
-			<div className="jumbotron">
+			<div className="jumbotron mb-3">
 				<h1 className="display-4">Hello, there! :)</h1>
 				<p className="lead">This is the picture book webapp.</p>
 				<p>

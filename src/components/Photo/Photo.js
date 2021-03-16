@@ -1,5 +1,9 @@
 import React from "react";
 import PhotoCard from "../PhotoCard/PhotoCard";
+import AddPhoto from "../AddPhoto/AddPhoto";
+import UploadPhoto from "../UploadPhoto/UploadPhoto";
+import Header from "../Header/Header";
+import { Route } from "react-router-dom";
 import "./Photo.css";
 
 class Photo extends React.Component {
@@ -40,12 +44,34 @@ class Photo extends React.Component {
 	render() {
 		return (
 			<div className="container Photo">
-				<div className="row row-cols-md-3 row-cols-1">
-					<PhotoCard
-						photoData={this.state.posts}
-						removePhoto={this.removePhoto}
-					/>
-				</div>
+				<Route
+					exact
+					path="/"
+					render={() => {
+						return (
+							<React.Fragment>
+								<Header />
+								<UploadPhoto />
+								<div className="row row-cols-md-3 row-cols-1">
+									<PhotoCard
+										photoData={this.state.posts}
+										removePhoto={this.removePhoto}
+									/>
+								</div>
+							</React.Fragment>
+						);
+					}}
+				/>
+				<Route
+					path="/AddPhoto"
+					render={() => {
+						return (
+							<React.Fragment>
+								<AddPhoto />
+							</React.Fragment>
+						);
+					}}
+				/>
 			</div>
 		);
 	}
