@@ -1,5 +1,7 @@
 .UploadPhoto {
-	text-align: center;
+	text-align: right;
+	margin-top: 32px;
+	margin-bottom: 30px;
 }
 
 .fa-plus-square {

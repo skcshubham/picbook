@@ -5,7 +5,7 @@ import "./UploadPhoto.css";
 class UploadPhoto extends React.Component {
 	render() {
 		return (
-			<div className="UploadPhoto mb-5">
+			<div className="UploadPhoto">
 				<Link className="btn UploadPhoto-button" to="/AddPhoto">
 					<h5>
 						<i className="fas fa-plus-square fa-lg"></i>Add Pictures
