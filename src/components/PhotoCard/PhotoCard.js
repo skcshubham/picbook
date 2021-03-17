@@ -6,6 +6,7 @@ class PhotoCard extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
+				{" "}
 				{this.props.photoData
 					.sort(function (x, y) {
 						// Sorting based on recently added pic
