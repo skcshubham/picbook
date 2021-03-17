@@ -1,18 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./PhotoCard.css";
 
 class PhotoCard extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				{" "}
-				{this.props.photoData
+				{this.props.posts
 					.sort(function (x, y) {
 						// Sorting based on recently added pic
 						return y.id - x.id;
 					})
-					.map((post) => {
+					.map((post, index) => {
 						return (
 							<div key={post.id} className="card col mb-5">
 								<img
@@ -23,7 +21,7 @@ class PhotoCard extends React.Component {
 								<div className="card-body">
 									<h5 className="card-title">{post.description}</h5>
 									<button
-										onClick={() => this.props.removePhoto(post)}
+										onClick={() => this.props.removePost(index)}
 										type="button"
 										className="PhotoCard-btn btn btn-outline-danger"
 									>
@@ -43,10 +41,5 @@ class PhotoCard extends React.Component {
 		);
 	}
 }
-
-PhotoCard.propTypes = {
-	photoData: PropTypes.array.isRequired,
-	removePhoto: PropTypes.func.isRequired,
-};
 
 export default PhotoCard;

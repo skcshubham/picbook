@@ -5,28 +5,11 @@ import UploadPhoto from "../UploadPhoto/UploadPhoto";
 import Header from "../Header/Header";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as actions from "../../redux/actions";
 import "./Photo.css";
 
 class Photo extends React.Component {
-	constructor() {
-		super();
-		this.state = {};
-		this.removePhoto = this.removePhoto.bind(this);
-	}
-
-	addPhoto(addedPost) {
-		this.setState((state) => ({
-			posts: state.posts.concat([addedPost]),
-		}));
-	}
-
-	removePhoto(photoRemoved) {
-		console.log(photoRemoved.description);
-		this.setState((state) => ({
-			posts: state.posts.filter((post) => post !== photoRemoved),
-		}));
-	}
-
 	render() {
 		return (
 			<div className="container Photo">
@@ -39,10 +22,7 @@ class Photo extends React.Component {
 								<Header />
 								<UploadPhoto />
 								<div className="row row-cols-md-3 row-cols-1">
-									<PhotoCard
-										photoData={this.props.posts}
-										removePhoto={this.removePhoto}
-									/>
+									<PhotoCard {...this.props} />
 								</div>
 							</React.Fragment>
 						);
@@ -51,20 +31,16 @@ class Photo extends React.Component {
 				<Route
 					path="/AddPhoto"
 					render={({ history }) => {
-						return (
-							<AddPhoto
-								onAddPhoto={(addedPost) => {
-									this.addPhoto(addedPost);
-									// clicking submit brings back to home page
-									history.push("/");
-								}}
-							/>
-						);
+						return <AddPhoto {...this.props} onHistory={history} />;
 					}}
 				/>
 			</div>
 		);
 	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actions, dispatch);
 }
 
 // Connecting Photo component to redux store
@@ -74,4 +50,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps)(Photo);
+export default connect(mapStateToProps, mapDispatchToProps)(Photo);
