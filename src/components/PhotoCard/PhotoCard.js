@@ -27,12 +27,6 @@ class PhotoCard extends React.Component {
 									>
 										Delete
 									</button>
-									<button
-										type="button"
-										className="PhotoCard-btn btn btn-outline-info"
-									>
-										Comments
-									</button>
 								</div>
 							</div>
 						);
