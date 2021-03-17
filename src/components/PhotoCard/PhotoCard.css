@@ -8,6 +8,8 @@
 	object-fit: cover;
 }
 
-.btn-outline-danger {
+.PhotoCard-btn {
+	border: 1px solid #dfdfdf !important;
 	border-radius: 10%;
+	width: 50%;
 }
